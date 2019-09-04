@@ -41,6 +41,20 @@ public class Program {
 		sellerDao.insert(seller2);
 		System.out.println("Inserted! New Id = " + seller2.getId());
 		
+		System.out.println();
+		
+		System.out.println("=== test 5 update ===");
+		seller2.setEmail("email@diferente.com.mx");
+		sellerDao.update(seller2);
+		System.out.println("Updated! Id = " + seller2.getId());
+		
+		System.out.println();
+		
+		System.out.println("=== test 6 delete ===");
+		int willBeDeleted = seller2.getId() - 1;
+		sellerDao.deleteById(willBeDeleted);
+		System.out.println("Deleted! Id = " + willBeDeleted);
+		
 	}
 
 }
